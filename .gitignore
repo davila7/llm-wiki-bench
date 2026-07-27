@@ -1,0 +1,29 @@
+# Secrets — never commit.
+.env
+.env.local
+.env.*.local
+
+# Defensive: OpenWiki stores provider credentials in plaintext in
+# ~/.openwiki/.env, including an OAuth refresh token. That file must never be
+# copied into this repo. These patterns make an accidental copy non-committable.
+.openwiki/
+**/.openwiki/
+openwiki.env
+**/.openwiki.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Aggregation database is derived from runs/ and is rebuildable.
+*.duckdb
+*.duckdb.wal
+
+# Local scratch
+.DS_Store
+scratch/
